@@ -7,10 +7,12 @@ Personal machine config: shell, Hyprland rice, AI tooling.
 ```bash
 git clone https://github.com/arnabwithab/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./install.sh
+./bootstrap.sh   # prerequisites
+./install.sh     # symlink configs into $HOME
+exec zsh
 ```
 
-`install.sh` symlinks everything into `$HOME` and skips any file that already exists (never overwrites). Re-run safe.
+Both scripts are re-run safe. `install.sh` skips existing files (never overwrites).
 
 ## What's inside
 
@@ -23,15 +25,11 @@ cd ~/.dotfiles
 | `.config/{fastfetch,btop,swaync,wlogout,wallust,cava,conky}` | utilities / theming |
 | `.claude/`, `.config/opencode/`, `.codex/`, `.agents/` | AI tool configs + skills |
 
-## Prerequisites (not in repo)
+## Prerequisites
 
-Install these yourself — the configs expect them:
+`bootstrap.sh` installs: zsh, oh-my-zsh (+ autosuggestions/syntax-highlighting), lsd, fastfetch, git-lfs, gpg, nvm, bun, rustup/cargo, miniconda.
 
-- zsh + [oh-my-zsh](https://ohmyz.sh/) (`agnosterzak` theme, autosuggestions, syntax-highlighting)
-- `lsd`, `fastfetch`, `bun`, `nvm`, `conda` (or strip those lines from `.zshrc`)
-- Hyprland stack (hyprland, hyprlock, hypridle, waybar, rofi-wayland, kitty)
-- rustup / cargo (sourced in shell)
-- git-lfs, gpg (for commit signing)
+Not automated (distro-specific): Hyprland stack (hyprland, hyprlock, hypridle, waybar, rofi-wayland, kitty).
 
 ## Never in this repo
 

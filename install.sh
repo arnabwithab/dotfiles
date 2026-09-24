@@ -3,7 +3,7 @@
 set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-HOME_DIR="${HOME:-/home/arnab}"
+HOME_DIR="${HOME:?HOME not set}"
 
 link() {
   local src="$DOTFILES/$1" dest="$HOME_DIR/$1"
@@ -30,9 +30,8 @@ for d in hypr waybar rofi kitty fastfetch btop swaync wlogout wallust cava conky
 done
 
 # partial dirs / files
-for f in .claude/CLAUDE.md .claude/settings.json .claude/skills \
-         .config/opencode/opencode.json .config/opencode/skills .config/opencode/agents \
-         .codex/config.toml .codex/AGENTS.md .agents/skills; do
+for f in .config/opencode/opencode.json .config/opencode/skills .config/opencode/agents \
+         .agents/skills; do
   link "$f"
 done
 

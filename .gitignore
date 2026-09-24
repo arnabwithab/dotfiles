@@ -1,0 +1,31 @@
+# secrets — never commit
+.ssh/
+.gnupg/
+.aws/
+.npmrc
+client_secret.json
+.config/gh/
+.docker/
+.kaggle/
+.config/rclone/
+
+# runtime / caches
+.cache/
+.oh-my-zsh/
+.nvm/
+.bun/
+.cargo/
+.rustup/
+.claude/history.jsonl
+.claude/sessions/
+.claude/file-history/
+.codex/*.sqlite*
+.codex/logs_*
+.config/opencode/node_modules/
+snap/
+*.zsh_history
+.zcompdump*
+.config/hypr/wallpaper_effects/.wallpaper_current
+.config/hypr/wallpaper_effects/.wallpaper_modified
+.config/hypr/.initial_startup_done
+.config/rofi/.current_wallpaper

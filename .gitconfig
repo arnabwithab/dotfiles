@@ -1,0 +1,15 @@
+[user]
+	name = Eros483
+	email = arnabmandal2912@gmail.com
+	signingkey = A083BB3ED35732B1
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+[commit]
+	gpgsign = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[pull]
+	rebase = true
